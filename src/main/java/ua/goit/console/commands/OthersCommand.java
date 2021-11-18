@@ -19,6 +19,7 @@ public class OthersCommand implements Command {
             case("getBranch"): getDevsByBranch(subParams);break;
             case("getLevel"): getDevsByLevel(subParams);break;
             case("getProjects"): getProjectList();break;
+            case("help"): printHelp();break;
         }
     }
 
@@ -40,5 +41,12 @@ public class OthersCommand implements Command {
 
     public void getProjectList() throws SQLException {
         othersDao.getProjectList();
+    }
+
+    private void printHelp() {
+        System.out.println("Order: [Entity_name] [command] [parameters]");
+        System.out.println("Entities: [developers|companies|projects|customers|skills|others]");
+        System.out.println("Commands: [create|get|update|delete]");
+        System.out.println("Other commands: [getSalary|getDevs|getBranch|getLevel|getProjects]");
     }
 }

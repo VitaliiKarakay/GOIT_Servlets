@@ -11,7 +11,7 @@ public class App {
         System.out.println("Start application");
         CommandHandler commandHandler = new CommandHandler();
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("others help - for help");
         while (scanner.hasNext()){
             commandHandler.handleCommand(scanner.nextLine());
         }
