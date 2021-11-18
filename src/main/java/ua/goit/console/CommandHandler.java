@@ -2,6 +2,7 @@ package ua.goit.console;
 
 import ua.goit.console.commands.*;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,9 +16,10 @@ public class CommandHandler {
         commandMap.put("projects", new ProjectsCommand());
         commandMap.put("customers", new CustomersCommand());
         commandMap.put("skills", new SkillsCommand());
+        commandMap.put("others", new OthersCommand());
     }
 
-    public void handleCommand(String params) {
+    public void handleCommand(String params) throws SQLException {
         int firstSpace = params.indexOf(" ");
         if (firstSpace > -1) {
             Command command = commandMap

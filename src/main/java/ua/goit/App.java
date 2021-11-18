@@ -3,10 +3,11 @@ package ua.goit;
 
 import ua.goit.console.CommandHandler;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         System.out.println("Start application");
         CommandHandler commandHandler = new CommandHandler();
         Scanner scanner = new Scanner(System.in);
